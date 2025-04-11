@@ -1,7 +1,5 @@
 
-#include <Rcpp.h>
 #include "Str.h"
-using namespace Rcpp;
 
 namespace Str {
 

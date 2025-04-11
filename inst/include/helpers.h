@@ -1,8 +1,6 @@
 #ifndef TEST_RCPP_H
 #define TEST_RCPP_H
 
-#include <Rcpp.h>
-
 #include <random>
 #include <algorithm>
 #include <iterator>

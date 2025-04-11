@@ -13,229 +13,229 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // power_vector
-NumericVector power_vector(NumericVector x, double power);
+Rcpp::NumericVector power_vector(Rcpp::NumericVector x, double power);
 RcppExport SEXP _testRcppNew_power_vector(SEXP xSEXP, SEXP powerSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type power(powerSEXP);
     rcpp_result_gen = Rcpp::wrap(power_vector(x, power));
     return rcpp_result_gen;
 END_RCPP
 }
 // sqrt_vector
-NumericVector sqrt_vector(NumericVector x);
+Rcpp::NumericVector sqrt_vector(Rcpp::NumericVector x);
 RcppExport SEXP _testRcppNew_sqrt_vector(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(sqrt_vector(x));
     return rcpp_result_gen;
 END_RCPP
 }
 // sum_vector
-double sum_vector(NumericVector x);
+double sum_vector(Rcpp::NumericVector x);
 RcppExport SEXP _testRcppNew_sum_vector(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(sum_vector(x));
     return rcpp_result_gen;
 END_RCPP
 }
 // divide_vector
-NumericVector divide_vector(NumericVector x, double divisor);
+Rcpp::NumericVector divide_vector(Rcpp::NumericVector x, double divisor);
 RcppExport SEXP _testRcppNew_divide_vector(SEXP xSEXP, SEXP divisorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type divisor(divisorSEXP);
     rcpp_result_gen = Rcpp::wrap(divide_vector(x, divisor));
     return rcpp_result_gen;
 END_RCPP
 }
 // multiply_vector
-NumericVector multiply_vector(NumericVector x, double multiplier);
+Rcpp::NumericVector multiply_vector(Rcpp::NumericVector x, double multiplier);
 RcppExport SEXP _testRcppNew_multiply_vector(SEXP xSEXP, SEXP multiplierSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type multiplier(multiplierSEXP);
     rcpp_result_gen = Rcpp::wrap(multiply_vector(x, multiplier));
     return rcpp_result_gen;
 END_RCPP
 }
 // toTable
-std::map<std::string, double> toTable(NumericVector x);
+std::map<std::string, double> toTable(Rcpp::NumericVector x);
 RcppExport SEXP _testRcppNew_toTable(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(toTable(x));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rminstd_rand0<NumericVector>
-template NumericVector Random::Rminstd_rand0<NumericVector>(std::size_t length);
+// Random::Rminstd_rand0<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rminstd_rand0<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_minstd_rand0(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand0<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand0<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rminstd_rand<NumericVector>
-template NumericVector Random::Rminstd_rand<NumericVector>(std::size_t length);
+// Random::Rminstd_rand<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rminstd_rand<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_minstd_rand(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rmt19937<NumericVector>
-template NumericVector Random::Rmt19937<NumericVector>(std::size_t length);
+// Random::Rmt19937<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rmt19937<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_mt19937(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rmt19937_64<NumericVector>
-template NumericVector Random::Rmt19937_64<NumericVector>(std::size_t length);
+// Random::Rmt19937_64<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rmt19937_64<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_mt19937_64(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937_64<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937_64<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rranlux24_base<NumericVector>
-template NumericVector Random::Rranlux24_base<NumericVector>(std::size_t length);
+// Random::Rranlux24_base<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rranlux24_base<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_ranlux24_base(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24_base<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24_base<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rranlux48_base<NumericVector>
-template NumericVector Random::Rranlux48_base<NumericVector>(std::size_t length);
+// Random::Rranlux48_base<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rranlux48_base<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_ranlux48_base(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48_base<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48_base<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rranlux24<NumericVector>
-template NumericVector Random::Rranlux24<NumericVector>(std::size_t length);
+// Random::Rranlux24<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rranlux24<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_ranlux24(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rranlux48<NumericVector>
-template NumericVector Random::Rranlux48<NumericVector>(std::size_t length);
+// Random::Rranlux48<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rranlux48<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_ranlux48(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rknuth_b<NumericVector>
-template NumericVector Random::Rknuth_b<NumericVector>(std::size_t length);
+// Random::Rknuth_b<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rknuth_b<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_knuth_b(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rknuth_b<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rknuth_b<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rdefault_random_engine<NumericVector>
-template NumericVector Random::Rdefault_random_engine<NumericVector>(std::size_t length);
+// Random::Rdefault_random_engine<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rdefault_random_engine<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_default_random_engine(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rdefault_random_engine<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rdefault_random_engine<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rsubtract_with_carry_engine<NumericVector>
-template NumericVector Random::Rsubtract_with_carry_engine<NumericVector>(std::size_t length);
+// Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_subtract_with_carry_engine(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rsubtract_with_carry_engine_64<NumericVector>
-template NumericVector Random::Rsubtract_with_carry_engine_64<NumericVector>(std::size_t length);
+// Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_subtract_with_carry_engine_64(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine_64<NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::sample<NumericVector>
-template NumericVector Random::sample<NumericVector>(NumericVector x, std::size_t size, bool replace);
+// Random::sample<Rcpp::NumericVector>
+template Rcpp::NumericVector Random::sample<Rcpp::NumericVector>(Rcpp::NumericVector x, std::size_t size, bool replace);
 RcppExport SEXP _testRcppNew_sample(SEXP xSEXP, SEXP sizeSEXP, SEXP replaceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< std::size_t >::type size(sizeSEXP);
     Rcpp::traits::input_parameter< bool >::type replace(replaceSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::sample<NumericVector>(x, size, replace));
+    rcpp_result_gen = Rcpp::wrap(Random::sample<Rcpp::NumericVector>(x, size, replace));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::sample<IntegerVector>
-template IntegerVector Random::sample<IntegerVector>(IntegerVector x, std::size_t size, bool replace);
+// Random::sample<Rcpp::IntegerVector>
+template Rcpp::IntegerVector Random::sample<Rcpp::IntegerVector>(Rcpp::IntegerVector x, std::size_t size, bool replace);
 RcppExport SEXP _testRcppNew_sample_int(SEXP xSEXP, SEXP sizeSEXP, SEXP replaceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< std::size_t >::type size(sizeSEXP);
     Rcpp::traits::input_parameter< bool >::type replace(replaceSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::sample<IntegerVector>(x, size, replace));
+    rcpp_result_gen = Rcpp::wrap(Random::sample<Rcpp::IntegerVector>(x, size, replace));
     return rcpp_result_gen;
 END_RCPP
 }
