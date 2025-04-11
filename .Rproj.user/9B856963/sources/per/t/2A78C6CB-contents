@@ -1,0 +1,85 @@
+#include <Rcpp.h>
+using namespace Rcpp;
+#include <iostream>
+#include <string>
+#include <cctype>
+
+struct ParsedSignature {
+    std::string keyword;
+    std::string return_type;
+    std::string func_name;
+    std::string args;
+};
+
+std::string trim(const std::string& s) {
+    size_t start = s.find_first_not_of(" \t\r\n");
+    if (start == std::string::npos) return "";
+    size_t end = s.find_last_not_of(" \t\r\n");
+    return s.substr(start, end - start + 1);
+}
+
+size_t find_matching_paren(const std::string& s, size_t open_pos) {
+    int depth = 1;
+    for (size_t i = open_pos + 1; i < s.size(); ++i) {
+        if (s[i] == '(') ++depth;
+        else if (s[i] == ')') --depth;
+        if (depth == 0) return i;
+    }
+    return std::string::npos;
+}
+
+bool parseFunctionSignature(const std::string& line, ParsedSignature& result) {
+    result = ParsedSignature(); // reset
+    
+    std::string str = trim(line);
+    if (str.empty()) return false;
+    
+    // Remove trailing semicolon
+    if (!str.empty() && str.back() == ';') str.pop_back();
+    
+    // Step 1: Handle "template" keyword if present
+    size_t pos = 0;
+    if (str.find("template") == 0) {
+        result.keyword = "template";
+        pos = 8;
+        str = trim(str.substr(pos));
+    }
+    
+    // Step 2: Find function argument parentheses
+    size_t paren_open = str.find('(');
+    if (paren_open == std::string::npos) return false;
+    size_t paren_close = find_matching_paren(str, paren_open);
+    if (paren_close == std::string::npos) return false;
+    
+    result.args = trim(str.substr(paren_open + 1, paren_close - paren_open - 1));
+    std::string before_args = trim(str.substr(0, paren_open));
+    
+    // Step 3: Extract func_name by walking backward, handling templates
+    size_t i = before_args.length();
+    int angle_depth = 0;
+    while (i-- > 0) {
+        char c = before_args[i];
+        if (c == '>') ++angle_depth;
+        else if (c == '<') --angle_depth;
+        
+        if (angle_depth == 0 && std::isspace(c)) {
+            ++i;
+            break;
+        }
+    }
+    
+    result.func_name = trim(before_args.substr(i));
+    result.return_type = trim(before_args.substr(0, i));
+    
+    return !result.func_name.empty() && !result.return_type.empty();
+}
+
+
+
+//[[Rcpp::export]]
+List checkP(std::string s){
+    ParsedSignature parsed;
+    
+    parseFunctionSignature(s, parsed);
+    return List::create(_["keyword"] = parsed.keyword,_["return_type"] = parsed.return_type,_["func_name"] = parsed.func_name,_["args"] = parsed.args);
+}

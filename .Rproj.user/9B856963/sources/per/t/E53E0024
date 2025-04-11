@@ -1,0 +1,26 @@
+{
+    "id": "E53E0024",
+    "path": "~/GitHub/testRcppNew/src/RcppExports.cpp",
+    "project_path": "src/RcppExports.cpp",
+    "type": "cpp",
+    "hash": "3013713518",
+    "contents": "",
+    "dirty": false,
+    "created": 1744216971108.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "313,56",
+        "scrollLine": "306"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1744293190,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1744293190,
+    "read_only": true,
+    "read_only_alternatives": []
+}

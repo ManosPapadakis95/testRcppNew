@@ -1,0 +1,15 @@
+Package: testRcppNew
+Type: Package
+Title: Concise Summary of What the Package Does
+Version: 0.0.1
+Date: 2025-03-14
+Authors@R: person("Your", "Name", role = c("aut", "cre"), email =
+        "your@email.com")
+Description: More about what it does (maybe more than one line).
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.14)
+LinkingTo: Rcpp
+LinkingTo: Rcpp (>= 0.12.3)
+Depends: R (>= 3.5.0), Rcpp (>= 0.12.3)
+SystemRequirements: C++17
+
