@@ -1,11 +1,11 @@
 
 #include <Rcpp.h>
-#include "helpers.h"
+#include "testRcppNew_types.h"
 #include "Str.h"
 
 //The following header is required in RcppExports.cpp so that the compiler has access to the definitions needed for template instantiations.
 
-//[[Rcpp::includes("helpers.h")]]
+// [ [ Rcpp :: includes("helpers.h") ] ]
 
 //[[Rcpp::export(name="minstd_rand0", cpp_name="minstd_rand0")]]
 template Rcpp::NumericVector Random::Rminstd_rand0<Rcpp::NumericVector>(std::size_t length); // 1. minstd_rand0

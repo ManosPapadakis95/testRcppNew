@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <iterator>
 
+#include <Rcpp/Lighter>
+
 using namespace Rcpp;
 
 namespace Random {
