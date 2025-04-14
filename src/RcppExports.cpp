@@ -103,77 +103,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Str::startsWith
-bool Str::startsWith(std::string str, std::string substr);
-RcppExport SEXP _testRcppNew_startsWith(SEXP strSEXP, SEXP substrSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type str(strSEXP);
-    Rcpp::traits::input_parameter< std::string >::type substr(substrSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::startsWith(str, substr));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::endsWith
-bool Str::endsWith(std::string str, std::string substr);
-RcppExport SEXP _testRcppNew_endsWith(SEXP strSEXP, SEXP substrSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type str(strSEXP);
-    Rcpp::traits::input_parameter< std::string >::type substr(substrSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::endsWith(str, substr));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::replaceSubstring
-std::string Str::replaceSubstring(std::string s, std::string oldSubstr, std::string newSubstr);
-RcppExport SEXP _testRcppNew_replaceSubstring(SEXP sSEXP, SEXP oldSubstrSEXP, SEXP newSubstrSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type s(sSEXP);
-    Rcpp::traits::input_parameter< std::string >::type oldSubstr(oldSubstrSEXP);
-    Rcpp::traits::input_parameter< std::string >::type newSubstr(newSubstrSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::replaceSubstring(s, oldSubstr, newSubstr));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::toTable
-std::map<std::string, double> Str::toTable(std::string x);
-RcppExport SEXP _testRcppNew_toTable_char(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::toTable(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// power_vector
-Rcpp::NumericVector power_vector(Rcpp::NumericVector x, double power);
-RcppExport SEXP _testRcppNew_power_vector(SEXP xSEXP, SEXP powerSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type power(powerSEXP);
-    rcpp_result_gen = Rcpp::wrap(power_vector(x, power));
-    return rcpp_result_gen;
-END_RCPP
-}
-// toTable
-std::map<std::string, double> toTable(Rcpp::NumericVector x);
-RcppExport SEXP _testRcppNew_toTable(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(toTable(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_testRcppNew_minstd_rand", (DL_FUNC) &_testRcppNew_minstd_rand, 1},
@@ -184,12 +113,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_testRcppNew_knuth_b_int", (DL_FUNC) &_testRcppNew_knuth_b_int, 1},
     {"_testRcppNew_sample", (DL_FUNC) &_testRcppNew_sample, 3},
     {"_testRcppNew_sample_int", (DL_FUNC) &_testRcppNew_sample_int, 3},
-    {"_testRcppNew_startsWith", (DL_FUNC) &_testRcppNew_startsWith, 2},
-    {"_testRcppNew_endsWith", (DL_FUNC) &_testRcppNew_endsWith, 2},
-    {"_testRcppNew_replaceSubstring", (DL_FUNC) &_testRcppNew_replaceSubstring, 3},
-    {"_testRcppNew_toTable_char", (DL_FUNC) &_testRcppNew_toTable_char, 1},
-    {"_testRcppNew_power_vector", (DL_FUNC) &_testRcppNew_power_vector, 2},
-    {"_testRcppNew_toTable", (DL_FUNC) &_testRcppNew_toTable, 1},
     {NULL, NULL, 0}
 };
 

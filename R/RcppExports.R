@@ -33,27 +33,3 @@ sample.int <- function( x, size, replace = FALSE ) {
     .Call(`_testRcppNew_sample_int`, x, size, replace)
 }
 
-startsWith <- function(str, substr) {
-    .Call(`_testRcppNew_startsWith`, str, substr)
-}
-
-endsWith <- function(str, substr) {
-    .Call(`_testRcppNew_endsWith`, str, substr)
-}
-
-replaceSubstring <- function(s, oldSubstr, newSubstr) {
-    .Call(`_testRcppNew_replaceSubstring`, s, oldSubstr, newSubstr)
-}
-
-toTable.char <- function(x) {
-    .Call(`_testRcppNew_toTable_char`, x)
-}
-
-power_vector <- function(x, power) {
-    .Call(`_testRcppNew_power_vector`, x, power)
-}
-
-toTable <- function(x) {
-    .Call(`_testRcppNew_toTable`, x)
-}
-
