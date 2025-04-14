@@ -3,30 +3,6 @@
 
 namespace Str {
 
-    bool containsSubstring(std::string str, std::string substr) {
-        return str.find(substr) != std::string::npos;
-    }
-
-    std::string toUpperCase(std::string s) {
-        std::string str = s;
-        std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-        return str;
-    }
-
-    std::string trim(std::string s) {
-        std::string str = s;
-        // Trim leading spaces
-        str.erase(str.begin(), std::find_if(str.begin(), str.end(), [](unsigned char ch) {
-            return !std::isspace(ch);
-        }));
-        
-        // Trim trailing spaces
-        str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char ch) {
-            return !std::isspace(ch);
-        }).base(), str.end());
-        return str;
-    }
-
     bool startsWith(std::string str, std::string substr) {
         return str.rfind(substr, 0) == 0; 
     }

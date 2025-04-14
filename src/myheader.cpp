@@ -4,41 +4,14 @@
 
 //The following header is required in RcppExports.cpp so that the compiler has access to the definitions needed for template instantiations.
 
-//[[Rcpp::export(name="minstd_rand0", cpp_name="minstd_rand0")]]
-template Rcpp::NumericVector Random::Rminstd_rand0<Rcpp::NumericVector>(std::size_t length); // 1. minstd_rand0
-
 //[[Rcpp::export(name="minstd_rand", cpp_name="minstd_rand")]]
 template Rcpp::NumericVector Random::Rminstd_rand<Rcpp::NumericVector>(std::size_t length); // 2. minstd_rand
 
 //[[Rcpp::export(name="mt19937", cpp_name="mt19937")]]
 template Rcpp::NumericVector Random::Rmt19937<Rcpp::NumericVector>(std::size_t length); // 3. mt19937
 
-//[[Rcpp::export(name="mt19937_64", cpp_name="mt19937_64")]]
-template Rcpp::NumericVector Random::Rmt19937_64<Rcpp::NumericVector>(std::size_t length); // 4. mt19937_64
-
-//[[Rcpp::export(name="ranlux24_base", cpp_name="ranlux24_base")]]
-template Rcpp::NumericVector Random::Rranlux24_base<Rcpp::NumericVector>(std::size_t length); // 5. ranlux24_base
-
-//[[Rcpp::export(name="ranlux48_base", cpp_name="ranlux48_base")]]
-template Rcpp::NumericVector Random::Rranlux48_base<Rcpp::NumericVector>(std::size_t length); // 6. ranlux48_base
-
-//[[Rcpp::export(name="ranlux24", cpp_name="ranlux24")]]
-template Rcpp::NumericVector Random::Rranlux24<Rcpp::NumericVector>(std::size_t length); // 7. ranlux24
-
-//[[Rcpp::export(name="ranlux48", cpp_name="ranlux48")]]
-template Rcpp::NumericVector Random::Rranlux48<Rcpp::NumericVector>(std::size_t length); // 8. ranlux48
-
 //[[Rcpp::export(name="knuth_b", cpp_name="knuth_b")]]
 template Rcpp::NumericVector Random::Rknuth_b<Rcpp::NumericVector>(std::size_t length); // 9. knuth_b
-
-//[[Rcpp::export(name="default_random_engine", cpp_name="default_random_engine")]]
-template Rcpp::NumericVector Random::Rdefault_random_engine<Rcpp::NumericVector>(std::size_t length); // 10. default_random_engine
-
-//[[Rcpp::export(name="subtract_with_carry_engine", cpp_name="subtract_with_carry_engine")]]
-template Rcpp::NumericVector Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>(std::size_t length); // 14. subtract_with_carry_engine
-
-//[[Rcpp::export(name="subtract_with_carry_engine_64", cpp_name="subtract_with_carry_engine_64")]]
-template Rcpp::NumericVector Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>(std::size_t length); // 15. subtract_with_carry_engine 64-bit
 
 // Since default arguments are not allowed in explicit template instantiations, 
 // we must use the `signature` field in Rcpp::export to specify the full argument list.
@@ -56,15 +29,6 @@ template Rcpp::IntegerVector Random::sample<Rcpp::IntegerVector>(Rcpp::IntegerVe
  * However, the compiler requires the namespace to be visible, which makes including the header unavoidable. 
  * Placing them here helps keep the original implementation file clean and ensures they remain within their namespace.
  */
-
-//[[Rcpp::export(name="containsSubstring", cpp_name="containsSubstring")]]
-bool Str::containsSubstring(std::string str, std::string substr);
-
-//[[Rcpp::export(name="toUpperCase", cpp_name="toUpperCase")]]
-std::string Str::toUpperCase(std::string s);
-
-//[[Rcpp::export(name="trim", cpp_name="trim")]]
-std::string Str::trim(std::string s);
 
 //[[Rcpp::export(name="startsWith", cpp_name="startsWith")]]
 bool Str::startsWith(std::string str, std::string substr);
