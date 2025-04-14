@@ -1,11 +1,8 @@
 
 #include <Rcpp.h>
 #include "testRcppNew_types.h"
-#include "Str.h"
 
 //The following header is required in RcppExports.cpp so that the compiler has access to the definitions needed for template instantiations.
-
-// [ [ Rcpp :: includes("helpers.h") ] ]
 
 //[[Rcpp::export(name="minstd_rand0", cpp_name="minstd_rand0")]]
 template Rcpp::NumericVector Random::Rminstd_rand0<Rcpp::NumericVector>(std::size_t length); // 1. minstd_rand0
@@ -59,9 +56,6 @@ template Rcpp::IntegerVector Random::sample<Rcpp::IntegerVector>(Rcpp::IntegerVe
  * However, the compiler requires the namespace to be visible, which makes including the header unavoidable. 
  * Placing them here helps keep the original implementation file clean and ensures they remain within their namespace.
  */
-
-
-//[[Rcpp::includes("Str.h")]]
 
 //[[Rcpp::export(name="containsSubstring", cpp_name="containsSubstring")]]
 bool Str::containsSubstring(std::string str, std::string substr);
