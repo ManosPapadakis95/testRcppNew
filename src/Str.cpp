@@ -1,5 +1,6 @@
 
-#include "testRcppNew_types.h"
+#include <string>
+#include <map>
 
 //[[Rcpp::export(name="startsWith", cpp_name="startsWith")]]
 bool startsWith(std::string str, std::string substr) {
