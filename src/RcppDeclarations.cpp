@@ -11,6 +11,17 @@ template Rcpp::NumericVector Random::Rmt19937<Rcpp::NumericVector>(std::size_t l
 //[[Rcpp::export(name="knuth_b", cpp_name="knuth_b")]]
 template Rcpp::NumericVector Random::Rknuth_b<Rcpp::NumericVector>(std::size_t length); // 9. knuth_b
 
+//Declarations for integers
+
+//[[Rcpp::export(name="minstd_rand.int", cpp_name="minstd_rand_int")]]
+template Rcpp::IntegerVector Random::Rminstd_rand<Rcpp::IntegerVector>(std::size_t length); // 2. minstd_rand
+
+//[[Rcpp::export(name="mt19937.int", cpp_name="mt19937_int")]]
+template Rcpp::IntegerVector Random::Rmt19937<Rcpp::IntegerVector>(std::size_t length); // 3. mt19937
+
+//[[Rcpp::export(name="knuth_b.int", cpp_name="knuth_b_int")]]
+template Rcpp::IntegerVector Random::Rknuth_b<Rcpp::IntegerVector>(std::size_t length); // 9. knuth_b
+
 // Since default arguments are not allowed in explicit template instantiations, 
 // we must use the `signature` field in Rcpp::export to specify the full argument list.
 

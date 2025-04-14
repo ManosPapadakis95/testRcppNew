@@ -15,8 +15,13 @@ namespace Random {
     ContainerType generate_random_sequence(std::size_t length, Engine engine = Engine()) {
         using T = typename std::remove_reference<typename ContainerType::value_type>::type;
         ContainerType sequence(length);
-        std::uniform_real_distribution<T> dist;
-        std::generate(sequence.begin(), sequence.end(), [&]() { return dist(engine); });
+        if constexpr (std::is_integral<typename ContainerType::value_type>::value) {
+            std::uniform_int_distribution<T> dist;
+            std::generate(sequence.begin(), sequence.end(), [&]() { return dist(engine); });
+        } else if constexpr (std::is_floating_point<typename ContainerType::value_type>::value) {
+            std::uniform_real_distribution<T> dist;
+            std::generate(sequence.begin(), sequence.end(), [&]() { return dist(engine); });
+        }
         return sequence;
     }
     
