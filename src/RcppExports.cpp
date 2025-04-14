@@ -3,7 +3,6 @@
 
 #include "../inst/include/testRcppNew_types.h"
 #include <Rcpp.h>
-#include "Str.h"
 
 using namespace Rcpp;
 
