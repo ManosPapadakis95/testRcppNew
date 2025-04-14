@@ -42,11 +42,6 @@ namespace Random {
         return result;
     }
 
-    template <class T> T Rminstd_rand0(std::size_t length) {
-        std::minstd_rand0 engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
     // minstd_rand
     template <class T> T Rminstd_rand(std::size_t length) {
         std::minstd_rand engine;
@@ -59,57 +54,9 @@ namespace Random {
         return generate_random_sequence<T>(length, engine);
     }
 
-    // mt19937_64
-    template <class T> T Rmt19937_64(std::size_t length) {
-        std::mt19937_64 engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // ranlux24_base
-    template <class T> T Rranlux24_base(std::size_t length) {
-        std::ranlux24_base engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // ranlux48_base
-    template <class T> T Rranlux48_base(std::size_t length) {
-        std::ranlux48_base engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // ranlux24
-    template <class T> T Rranlux24(std::size_t length) {
-        std::ranlux24 engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // ranlux48
-    template <class T> T Rranlux48(std::size_t length) {
-        std::ranlux48 engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
     // knuth_b
     template <class T> T Rknuth_b(std::size_t length) {
         std::knuth_b engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // default_random_engine
-    template <class T> T Rdefault_random_engine(std::size_t length) {
-        std::default_random_engine engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // subtract_with_carry_engine
-    template <class T> T Rsubtract_with_carry_engine(std::size_t length) {
-        std::subtract_with_carry_engine<unsigned int, 24, 10, 24> engine;
-        return generate_random_sequence<T>(length, engine);
-    }
-
-    // subtract_with_carry_engine_64
-    template <class T> T Rsubtract_with_carry_engine_64(std::size_t length) {
-        std::subtract_with_carry_engine<uint64_t, 48, 5, 24> engine;
         return generate_random_sequence<T>(length, engine);
     }
 }
