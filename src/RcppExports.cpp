@@ -3,7 +3,6 @@
 
 #include "../inst/include/testRcppNew_types.h"
 #include <Rcpp.h>
-#include "Str.h"
 
 using namespace Rcpp;
 
@@ -12,86 +11,6 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// power_vector
-Rcpp::NumericVector power_vector(Rcpp::NumericVector x, double power);
-RcppExport SEXP _testRcppNew_power_vector(SEXP xSEXP, SEXP powerSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type power(powerSEXP);
-    rcpp_result_gen = Rcpp::wrap(power_vector(x, power));
-    return rcpp_result_gen;
-END_RCPP
-}
-// sqrt_vector
-Rcpp::NumericVector sqrt_vector(Rcpp::NumericVector x);
-RcppExport SEXP _testRcppNew_sqrt_vector(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(sqrt_vector(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// sum_vector
-double sum_vector(Rcpp::NumericVector x);
-RcppExport SEXP _testRcppNew_sum_vector(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(sum_vector(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// divide_vector
-Rcpp::NumericVector divide_vector(Rcpp::NumericVector x, double divisor);
-RcppExport SEXP _testRcppNew_divide_vector(SEXP xSEXP, SEXP divisorSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type divisor(divisorSEXP);
-    rcpp_result_gen = Rcpp::wrap(divide_vector(x, divisor));
-    return rcpp_result_gen;
-END_RCPP
-}
-// multiply_vector
-Rcpp::NumericVector multiply_vector(Rcpp::NumericVector x, double multiplier);
-RcppExport SEXP _testRcppNew_multiply_vector(SEXP xSEXP, SEXP multiplierSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type multiplier(multiplierSEXP);
-    rcpp_result_gen = Rcpp::wrap(multiply_vector(x, multiplier));
-    return rcpp_result_gen;
-END_RCPP
-}
-// toTable
-std::map<std::string, double> toTable(Rcpp::NumericVector x);
-RcppExport SEXP _testRcppNew_toTable(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(toTable(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Random::Rminstd_rand0<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rminstd_rand0<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_minstd_rand0(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand0<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
 // Random::Rminstd_rand<Rcpp::NumericVector>
 template Rcpp::NumericVector Random::Rminstd_rand<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_minstd_rand(SEXP lengthSEXP) {
@@ -114,61 +33,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rmt19937_64<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rmt19937_64<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_mt19937_64(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937_64<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Random::Rranlux24_base<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rranlux24_base<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_ranlux24_base(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24_base<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Random::Rranlux48_base<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rranlux48_base<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_ranlux48_base(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48_base<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Random::Rranlux24<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rranlux24<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_ranlux24(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux24<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Random::Rranlux48<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rranlux48<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_ranlux48(SEXP lengthSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rranlux48<Rcpp::NumericVector>(length));
-    return rcpp_result_gen;
-END_RCPP
-}
 // Random::Rknuth_b<Rcpp::NumericVector>
 template Rcpp::NumericVector Random::Rknuth_b<Rcpp::NumericVector>(std::size_t length);
 RcppExport SEXP _testRcppNew_knuth_b(SEXP lengthSEXP) {
@@ -180,36 +44,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rdefault_random_engine<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rdefault_random_engine<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_default_random_engine(SEXP lengthSEXP) {
+// Random::Rminstd_rand<Rcpp::IntegerVector>
+template Rcpp::IntegerVector Random::Rminstd_rand<Rcpp::IntegerVector>(std::size_t length);
+RcppExport SEXP _testRcppNew_minstd_rand_int(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rdefault_random_engine<Rcpp::NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rminstd_rand<Rcpp::IntegerVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_subtract_with_carry_engine(SEXP lengthSEXP) {
+// Random::Rmt19937<Rcpp::IntegerVector>
+template Rcpp::IntegerVector Random::Rmt19937<Rcpp::IntegerVector>(std::size_t length);
+RcppExport SEXP _testRcppNew_mt19937_int(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine<Rcpp::NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rmt19937<Rcpp::IntegerVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
-// Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>
-template Rcpp::NumericVector Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>(std::size_t length);
-RcppExport SEXP _testRcppNew_subtract_with_carry_engine_64(SEXP lengthSEXP) {
+// Random::Rknuth_b<Rcpp::IntegerVector>
+template Rcpp::IntegerVector Random::Rknuth_b<Rcpp::IntegerVector>(std::size_t length);
+RcppExport SEXP _testRcppNew_knuth_b_int(SEXP lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::size_t >::type length(lengthSEXP);
-    rcpp_result_gen = Rcpp::wrap(Random::Rsubtract_with_carry_engine_64<Rcpp::NumericVector>(length));
+    rcpp_result_gen = Rcpp::wrap(Random::Rknuth_b<Rcpp::IntegerVector>(length));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -236,40 +100,6 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< std::size_t >::type size(sizeSEXP);
     Rcpp::traits::input_parameter< bool >::type replace(replaceSEXP);
     rcpp_result_gen = Rcpp::wrap(Random::sample<Rcpp::IntegerVector>(x, size, replace));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::containsSubstring
-bool Str::containsSubstring(std::string str, std::string substr);
-RcppExport SEXP _testRcppNew_containsSubstring(SEXP strSEXP, SEXP substrSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type str(strSEXP);
-    Rcpp::traits::input_parameter< std::string >::type substr(substrSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::containsSubstring(str, substr));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::toUpperCase
-std::string Str::toUpperCase(std::string s);
-RcppExport SEXP _testRcppNew_toUpperCase(SEXP sSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::toUpperCase(s));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Str::trim
-std::string Str::trim(std::string s);
-RcppExport SEXP _testRcppNew_trim(SEXP sSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type s(sSEXP);
-    rcpp_result_gen = Rcpp::wrap(Str::trim(s));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -321,35 +151,45 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// power_vector
+Rcpp::NumericVector power_vector(Rcpp::NumericVector x, double power);
+RcppExport SEXP _testRcppNew_power_vector(SEXP xSEXP, SEXP powerSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type power(powerSEXP);
+    rcpp_result_gen = Rcpp::wrap(power_vector(x, power));
+    return rcpp_result_gen;
+END_RCPP
+}
+// toTable
+std::map<std::string, double> toTable(Rcpp::NumericVector x);
+RcppExport SEXP _testRcppNew_toTable(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(toTable(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_testRcppNew_power_vector", (DL_FUNC) &_testRcppNew_power_vector, 2},
-    {"_testRcppNew_sqrt_vector", (DL_FUNC) &_testRcppNew_sqrt_vector, 1},
-    {"_testRcppNew_sum_vector", (DL_FUNC) &_testRcppNew_sum_vector, 1},
-    {"_testRcppNew_divide_vector", (DL_FUNC) &_testRcppNew_divide_vector, 2},
-    {"_testRcppNew_multiply_vector", (DL_FUNC) &_testRcppNew_multiply_vector, 2},
-    {"_testRcppNew_toTable", (DL_FUNC) &_testRcppNew_toTable, 1},
-    {"_testRcppNew_minstd_rand0", (DL_FUNC) &_testRcppNew_minstd_rand0, 1},
     {"_testRcppNew_minstd_rand", (DL_FUNC) &_testRcppNew_minstd_rand, 1},
     {"_testRcppNew_mt19937", (DL_FUNC) &_testRcppNew_mt19937, 1},
-    {"_testRcppNew_mt19937_64", (DL_FUNC) &_testRcppNew_mt19937_64, 1},
-    {"_testRcppNew_ranlux24_base", (DL_FUNC) &_testRcppNew_ranlux24_base, 1},
-    {"_testRcppNew_ranlux48_base", (DL_FUNC) &_testRcppNew_ranlux48_base, 1},
-    {"_testRcppNew_ranlux24", (DL_FUNC) &_testRcppNew_ranlux24, 1},
-    {"_testRcppNew_ranlux48", (DL_FUNC) &_testRcppNew_ranlux48, 1},
     {"_testRcppNew_knuth_b", (DL_FUNC) &_testRcppNew_knuth_b, 1},
-    {"_testRcppNew_default_random_engine", (DL_FUNC) &_testRcppNew_default_random_engine, 1},
-    {"_testRcppNew_subtract_with_carry_engine", (DL_FUNC) &_testRcppNew_subtract_with_carry_engine, 1},
-    {"_testRcppNew_subtract_with_carry_engine_64", (DL_FUNC) &_testRcppNew_subtract_with_carry_engine_64, 1},
+    {"_testRcppNew_minstd_rand_int", (DL_FUNC) &_testRcppNew_minstd_rand_int, 1},
+    {"_testRcppNew_mt19937_int", (DL_FUNC) &_testRcppNew_mt19937_int, 1},
+    {"_testRcppNew_knuth_b_int", (DL_FUNC) &_testRcppNew_knuth_b_int, 1},
     {"_testRcppNew_sample", (DL_FUNC) &_testRcppNew_sample, 3},
     {"_testRcppNew_sample_int", (DL_FUNC) &_testRcppNew_sample_int, 3},
-    {"_testRcppNew_containsSubstring", (DL_FUNC) &_testRcppNew_containsSubstring, 2},
-    {"_testRcppNew_toUpperCase", (DL_FUNC) &_testRcppNew_toUpperCase, 1},
-    {"_testRcppNew_trim", (DL_FUNC) &_testRcppNew_trim, 1},
     {"_testRcppNew_startsWith", (DL_FUNC) &_testRcppNew_startsWith, 2},
     {"_testRcppNew_endsWith", (DL_FUNC) &_testRcppNew_endsWith, 2},
     {"_testRcppNew_replaceSubstring", (DL_FUNC) &_testRcppNew_replaceSubstring, 3},
     {"_testRcppNew_toTable_char", (DL_FUNC) &_testRcppNew_toTable_char, 1},
+    {"_testRcppNew_power_vector", (DL_FUNC) &_testRcppNew_power_vector, 2},
+    {"_testRcppNew_toTable", (DL_FUNC) &_testRcppNew_toTable, 1},
     {NULL, NULL, 0}
 };
 

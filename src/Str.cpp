@@ -1,5 +1,5 @@
 
-#include "Str.h"
+#include "testRcppNew_types.h"
 
 namespace Str {
 
