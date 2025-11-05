@@ -49,11 +49,103 @@ toTable.char <- function(x) {
     .Call(`_testRcppNew_toTable_char`, x)
 }
 
-power_vector <- function(x, power) {
-    .Call(`_testRcppNew_power_vector`, x, power)
+add <- function(a, b) {
+    .Call(`_testRcppNew_add`, a, b)
 }
 
-toTable <- function(x) {
-    .Call(`_testRcppNew_toTable`, x)
+multiply <- function(x, y) {
+    .Call(`_testRcppNew_multiply`, x, y)
+}
+
+identity.numeric <- function(x) {
+    .Call(`_testRcppNew_identity_numeric`, x)
+}
+
+identity.integer <- function(x) {
+    .Call(`_testRcppNew_identity_integer`, x)
+}
+
+identity.character <- function(x) {
+    .Call(`_testRcppNew_identity_character`, x)
+}
+
+combine.a <- function(y, x) {
+    .Call(`_testRcppNew_combine_a`, y, x)
+}
+
+combine.b <- function(y, x) {
+    .Call(`_testRcppNew_combine_b`, y, x)
+}
+
+computeSum_a <- function(x) {
+    .Call(`_testRcppNew_computeSum_a`, x)
+}
+
+computeSum_b <- function(x) {
+    .Call(`_testRcppNew_computeSum_b`, x)
+}
+
+math_square_a <- function(x) {
+    .Call(`_testRcppNew_math_square_a`, x)
+}
+
+math_square_b <- function(x) {
+    .Call(`_testRcppNew_math_square_b`, x)
+}
+
+app_core_version1 <- function() {
+    .Call(`_testRcppNew_app_core_version1`)
+}
+
+identity_string <- function(value) {
+    .Call(`_testRcppNew_identity_string`, value)
+}
+
+test_addValues_a <- function(y, x) {
+    invisible(.Call(`_testRcppNew_test_addValues_a`, y, x))
+}
+
+test_addValues_b <- function(y, x) {
+    invisible(.Call(`_testRcppNew_test_addValues_b`, y, x))
+}
+
+pi_func <- function() {
+    .Call(`_testRcppNew_pi_func`)
+}
+
+util_hashCode <- function(key) {
+    .Call(`_testRcppNew_util_hashCode`, key)
+}
+
+mean <- function(x) {
+    .Call(`_testRcppNew_mean1`, x)
+}
+
+mean <- function(x) {
+    .Call(`_testRcppNew_mean`, x)
+}
+
+gcd_a <- function(x, y) {
+    .Call(`_testRcppNew_gcd_a`, x, y)
+}
+
+gcd_b <- function(x, y) {
+    .Call(`_testRcppNew_gcd_b`, x, y)
+}
+
+process <- function(x) {
+    invisible(.Call(`_testRcppNew_process`, x))
+}
+
+equal_func <- function(a, b) {
+    .Call(`_testRcppNew_equal_func`, a, b)
+}
+
+average_a <- function(x, y) {
+    .Call(`_testRcppNew_average_a`, x, y)
+}
+
+average_b <- function(x, y) {
+    .Call(`_testRcppNew_average_b`, x, y)
 }
 

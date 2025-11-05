@@ -151,26 +151,284 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// power_vector
-Rcpp::NumericVector power_vector(Rcpp::NumericVector x, double power);
-RcppExport SEXP _testRcppNew_power_vector(SEXP xSEXP, SEXP powerSEXP) {
+// add
+int add(int a, int b);
+RcppExport SEXP _testRcppNew_add(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< double >::type power(powerSEXP);
-    rcpp_result_gen = Rcpp::wrap(power_vector(x, power));
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(add(a, b));
     return rcpp_result_gen;
 END_RCPP
 }
-// toTable
-std::map<std::string, double> toTable(Rcpp::NumericVector x);
-RcppExport SEXP _testRcppNew_toTable(SEXP xSEXP) {
+// multiply
+double multiply(double x, double y);
+RcppExport SEXP _testRcppNew_multiply(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(multiply(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// identity<Rcpp::NumericVector>
+template Rcpp::NumericVector identity<Rcpp::NumericVector>(Rcpp::NumericVector x);
+RcppExport SEXP _testRcppNew_identity_numeric(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(toTable(x));
+    rcpp_result_gen = Rcpp::wrap(identity<Rcpp::NumericVector>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// identity< Rcpp::IntegerVector   >
+template Rcpp::IntegerVector identity< Rcpp::IntegerVector   >(Rcpp::IntegerVector x);
+RcppExport SEXP _testRcppNew_identity_integer(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(identity< Rcpp::IntegerVector   >(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// identity< Rcpp::CharacterVector >
+template Rcpp::CharacterVector identity< Rcpp::CharacterVector >(Rcpp::CharacterVector x);
+RcppExport SEXP _testRcppNew_identity_character(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(identity< Rcpp::CharacterVector >(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// combine<              Rcpp   ::      NumericVector,       Rcpp::IntegerVector      >
+template Rcpp::List combine<              Rcpp   ::      NumericVector,       Rcpp::IntegerVector      >(const Rcpp::NumericVector& y, const Rcpp::IntegerVector& x);
+RcppExport SEXP _testRcppNew_combine_a(SEXP ySEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(combine<              Rcpp   ::      NumericVector,       Rcpp::IntegerVector      >(y, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// combine<Rcpp  ::  IntegerVector     ,   Rcpp::  NumericVector  >
+template Rcpp ::    List combine<Rcpp  ::  IntegerVector     ,   Rcpp::  NumericVector  >(const Rcpp::IntegerVector& y, const Rcpp::NumericVector& x);
+RcppExport SEXP _testRcppNew_combine_b(SEXP ySEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(combine<Rcpp  ::  IntegerVector     ,   Rcpp::  NumericVector  >(y, x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// computeSum<Rcpp :: NumericVector>
+template double computeSum<Rcpp :: NumericVector>(const Rcpp::NumericVector& x);
+RcppExport SEXP _testRcppNew_computeSum_a(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(computeSum<Rcpp :: NumericVector>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// computeSum<Rcpp:: IntegerVector>
+template double computeSum<Rcpp:: IntegerVector>(const Rcpp::     IntegerVector& x);
+RcppExport SEXP _testRcppNew_computeSum_b(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::     IntegerVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(computeSum<Rcpp:: IntegerVector>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// math::square< double >
+template double math::square< double >(double x);
+RcppExport SEXP _testRcppNew_math_square_a(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(math::square< double >(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// math::square<int>
+template int math::square<int>(int x);
+RcppExport SEXP _testRcppNew_math_square_b(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(math::square<int>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// app::core::version1
+std::string app::core::version1();
+RcppExport SEXP _testRcppNew_app_core_version1() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(app::core::version1());
+    return rcpp_result_gen;
+END_RCPP
+}
+// identity<std::string>
+template <> std::string identity<std::string>(std::string value);
+RcppExport SEXP _testRcppNew_identity_string(SEXP valueSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type value(valueSEXP);
+    rcpp_result_gen = Rcpp::wrap(identity<std::string>(value));
+    return rcpp_result_gen;
+END_RCPP
+}
+// test::addValues<double , double>
+template void test::addValues<double , double>(const double& y, const double& x);
+RcppExport SEXP _testRcppNew_test_addValues_a(SEXP ySEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const double& >::type x(xSEXP);
+    test::addValues<double , double>(y, x);
+    return R_NilValue;
+END_RCPP
+}
+// test::addValues<Rcpp ::NumericVector,  Rcpp::NumericVector>
+template void test::addValues<Rcpp ::NumericVector,  Rcpp::NumericVector>(const Rcpp::NumericVector& y, const Rcpp::NumericVector& x);
+RcppExport SEXP _testRcppNew_test_addValues_b(SEXP ySEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x(xSEXP);
+    test::addValues<Rcpp ::NumericVector,  Rcpp::NumericVector>(y, x);
+    return R_NilValue;
+END_RCPP
+}
+// piii
+double piii();
+RcppExport SEXP _testRcppNew_pi_func() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(piii());
+    return rcpp_result_gen;
+END_RCPP
+}
+// util::hashCode
+inline int util::hashCode(const std::string& key);
+RcppExport SEXP _testRcppNew_util_hashCode(SEXP keySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type key(keySEXP);
+    rcpp_result_gen = Rcpp::wrap(util::hashCode(key));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mean<Rcpp::NumericVector>
+template Rcpp::NumericVector mean<Rcpp::NumericVector>(const Rcpp::NumericVector& x);
+RcppExport SEXP _testRcppNew_mean1(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mean<Rcpp::NumericVector>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mean<Rcpp:: IntegerVector>
+template Rcpp:: IntegerVector mean<Rcpp:: IntegerVector>(const Rcpp::IntegerVector& x);
+RcppExport SEXP _testRcppNew_mean(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(mean<Rcpp:: IntegerVector>(x));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gcd<int>
+template int gcd<int>(int x, int y);
+RcppExport SEXP _testRcppNew_gcd_a(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd<int>(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gcd<long>
+template long gcd<long>(long x, long y);
+RcppExport SEXP _testRcppNew_gcd_b(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< long >::type x(xSEXP);
+    Rcpp::traits::input_parameter< long >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(gcd<long>(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// process<Rcpp::List>
+template void process<Rcpp::List>(const Rcpp::List& x);
+RcppExport SEXP _testRcppNew_process(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type x(xSEXP);
+    process<Rcpp::List>(x);
+    return R_NilValue;
+END_RCPP
+}
+// equal
+inline bool equal(int a, int b);
+RcppExport SEXP _testRcppNew_equal_func(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(equal(a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// average<double>
+template double average<double>(double x, double y);
+RcppExport SEXP _testRcppNew_average_a(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(average<double>(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// average<int>
+template int average<int>(int x, int y);
+RcppExport SEXP _testRcppNew_average_b(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type x(xSEXP);
+    Rcpp::traits::input_parameter< int >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(average<int>(x, y));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -188,8 +446,31 @@ static const R_CallMethodDef CallEntries[] = {
     {"_testRcppNew_endsWith", (DL_FUNC) &_testRcppNew_endsWith, 2},
     {"_testRcppNew_replaceSubstring", (DL_FUNC) &_testRcppNew_replaceSubstring, 3},
     {"_testRcppNew_toTable_char", (DL_FUNC) &_testRcppNew_toTable_char, 1},
-    {"_testRcppNew_power_vector", (DL_FUNC) &_testRcppNew_power_vector, 2},
-    {"_testRcppNew_toTable", (DL_FUNC) &_testRcppNew_toTable, 1},
+    {"_testRcppNew_add", (DL_FUNC) &_testRcppNew_add, 2},
+    {"_testRcppNew_multiply", (DL_FUNC) &_testRcppNew_multiply, 2},
+    {"_testRcppNew_identity_numeric", (DL_FUNC) &_testRcppNew_identity_numeric, 1},
+    {"_testRcppNew_identity_integer", (DL_FUNC) &_testRcppNew_identity_integer, 1},
+    {"_testRcppNew_identity_character", (DL_FUNC) &_testRcppNew_identity_character, 1},
+    {"_testRcppNew_combine_a", (DL_FUNC) &_testRcppNew_combine_a, 2},
+    {"_testRcppNew_combine_b", (DL_FUNC) &_testRcppNew_combine_b, 2},
+    {"_testRcppNew_computeSum_a", (DL_FUNC) &_testRcppNew_computeSum_a, 1},
+    {"_testRcppNew_computeSum_b", (DL_FUNC) &_testRcppNew_computeSum_b, 1},
+    {"_testRcppNew_math_square_a", (DL_FUNC) &_testRcppNew_math_square_a, 1},
+    {"_testRcppNew_math_square_b", (DL_FUNC) &_testRcppNew_math_square_b, 1},
+    {"_testRcppNew_app_core_version1", (DL_FUNC) &_testRcppNew_app_core_version1, 0},
+    {"_testRcppNew_identity_string", (DL_FUNC) &_testRcppNew_identity_string, 1},
+    {"_testRcppNew_test_addValues_a", (DL_FUNC) &_testRcppNew_test_addValues_a, 2},
+    {"_testRcppNew_test_addValues_b", (DL_FUNC) &_testRcppNew_test_addValues_b, 2},
+    {"_testRcppNew_pi_func", (DL_FUNC) &_testRcppNew_pi_func, 0},
+    {"_testRcppNew_util_hashCode", (DL_FUNC) &_testRcppNew_util_hashCode, 1},
+    {"_testRcppNew_mean1", (DL_FUNC) &_testRcppNew_mean1, 1},
+    {"_testRcppNew_mean", (DL_FUNC) &_testRcppNew_mean, 1},
+    {"_testRcppNew_gcd_a", (DL_FUNC) &_testRcppNew_gcd_a, 2},
+    {"_testRcppNew_gcd_b", (DL_FUNC) &_testRcppNew_gcd_b, 2},
+    {"_testRcppNew_process", (DL_FUNC) &_testRcppNew_process, 1},
+    {"_testRcppNew_equal_func", (DL_FUNC) &_testRcppNew_equal_func, 2},
+    {"_testRcppNew_average_a", (DL_FUNC) &_testRcppNew_average_a, 2},
+    {"_testRcppNew_average_b", (DL_FUNC) &_testRcppNew_average_b, 2},
     {NULL, NULL, 0}
 };
 
